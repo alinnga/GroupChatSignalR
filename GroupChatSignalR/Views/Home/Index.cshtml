@@ -1,13 +1,44 @@
 ﻿@{
     Layout = null;
+
 }
+
+@using GroupChatSignalR.Hubs;
+
 <!DOCTYPE html>
 <html>
 <head>
+    <style>
+        #chatBody {
+            width: 80vw;
+            height: 50vh;
+            align-content: center;
+        }
+
+        .inputFormClass {
+            width: 80vw;
+            height: 10vh;
+            align-content: center;
+        }
+
+        #group {
+        }
+        #message {
+            width: 80vw;
+            height: 10vh;
+            align-content: center;
+        }
+        #messageAdmin {
+            background-color: rgba(2, 135, 52, 0.3);
+            width: 80vw;
+            height: 10vh;
+            align-content: center;
+        }
+    </style>
     <title></title>
 </head>
 <body>
-    <h2>Чат-комната</h2>
+    <h2>Чат</h2>
 
     <div class="main">
         <div id="loginBlock">
@@ -16,26 +47,28 @@
             <input id="btnLogin" type="button" value="Войти" />
         </div>
         <div id="joinBlock">
-            Выберите группу:<br />
+            Введите группу:<br />
             <input id="group" type="text" />
             <input id="join" type="button" value="Присоединиться" />
         </div>
         <div id="chatBody">
             <div id="header"></div>
-            <div id="inputForm">
-                <input type="text" id="message" />
-                <input type="button" id="sendmessage" value="Отправить" />
-            </div>
             <div id="chatroom"></div>
+            <div id="inputForm" class="inputFormClass">
+                <input type="text" id="message" class="inputFormClass" />
+                <input type="button" id="sendmessage" value="Отправить" class="inputFormClass" />
+            </div>
 
             <div id="chatusers">
-                <p><b>Все пользователи</b></p>
+                <p><b>Все пользователи </b></p>
             </div>
         </div>
         <input id="hdId" type="hidden" />
         <input id="username" type="hidden" />
     </div>
+    <script>
 
+    </script>
     <script src="~/Scripts/jquery-3.4.1.min.js"></script>
     <!--Ссылка на библиотеку SignalR -->
     <script src="~/Scripts/jquery.signalR-2.4.1.min.js"></script>
