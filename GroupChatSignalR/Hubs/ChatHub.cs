@@ -16,9 +16,9 @@ namespace GroupChatSignalR.Hubs
         // Отправка сообщений
         public void Send(string name, string message, string groupName)
         {
-            if (String.IsNullOrEmpty(groupName))
+            if (String.IsNullOrEmpty(message))
             {
-                
+                Clients.Caller().emptyMessage();
             }
             else
             {

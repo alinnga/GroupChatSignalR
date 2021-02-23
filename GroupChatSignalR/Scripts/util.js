@@ -10,14 +10,17 @@
     chat.client.addMessage = function (name, message) {
         // Добавление сообщений на веб-страницу ser
         if (name.toLowerCase() == "admin") {
-            $('#chatroom').append('<p id = messageAdmin ><b>' + htmlEncode(name)
+            $('#chatroom').append('<p class = messageAdmin ><b>' + htmlEncode(name)
                 + '</b>: ' + htmlEncode(message) + '</p>');
         } else {
-            $('#chatroom').append('<p id = message ><b>' + htmlEncode(name)
+            $('#chatroom').append('<p class = "messageUser" ><b>' + htmlEncode(name)
             + '</b>: ' + htmlEncode(message) + '</p>');
         }
         
     };
+    chat.client.emptyMessage = function () {
+        $('#chatroom').append('<p ><b> Сообщение не должно быть пустым! </b>: </p>');
+    }
     chat.client.removeByID = function (id) {
         // Добавление сообщений на веб-страницу ser
         $('#' + id).remove();

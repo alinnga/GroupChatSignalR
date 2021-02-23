@@ -10,6 +10,6 @@ namespace GroupChatSignalR.Models
         public string ConnectionId { get; set; }
         public string Name { get; set; }
         public String group { get; set; }
-        public bool isMod { get; set; }
+        public bool isMod { get; set; }  
     }
 }
